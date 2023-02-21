@@ -1,3 +1,4 @@
+// Time complexity O(n)
 function merge(leftArr: number[], rightArr: number[]): number[] {
   const resultArr = [];
   let leftArrIndex = 0;
@@ -19,7 +20,9 @@ function merge(leftArr: number[], rightArr: number[]): number[] {
   );
 }
 
+// Time complexity of the whole algorithms is O(n log n)
 function mergeSort(arr: number[]): number[] {
+  // Time complexity of the recursion part O(log n)
   if (arr.length < 2) {
     return arr;
   }
@@ -28,5 +31,6 @@ function mergeSort(arr: number[]): number[] {
   const leftArr = arr.slice(0, middleIndex);
   const rightArr = arr.slice(middleIndex, arr.length);
 
+  // Time complexity O(n)
   return merge(mergeSort(leftArr), mergeSort(rightArr));
 }

@@ -1,4 +1,5 @@
 "use strict";
+// Time complexity O(n)
 function merge(leftArr, rightArr) {
     const resultArr = [];
     let leftArrIndex = 0;
@@ -15,14 +16,15 @@ function merge(leftArr, rightArr) {
     }
     return resultArr.concat(leftArr.slice(leftArrIndex, leftArr.length), rightArr.slice(rightArrIndex, rightArr.length));
 }
+// Time complexity of the whole algorithms is O(n log n)
 function mergeSort(arr) {
+    // Time complexity of the recursion part O(log n)
     if (arr.length < 2) {
         return arr;
     }
     const middleIndex = Math.floor(arr.length / 2);
     const leftArr = arr.slice(0, middleIndex);
     const rightArr = arr.slice(middleIndex, arr.length);
+    // Time complexity O(n)
     return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
-const res = mergeSort([1, 4, 2, 19, 11, 4, 3]);
-console.log(res);
