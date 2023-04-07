@@ -47,6 +47,7 @@ class MinHeap {
             throw new Error("The heap is empty");
         let item = this.items[0];
         this.items[0] = this.items[this.items.length - 1];
+        this.items.pop();
         this.heapifyDown();
         return item;
     }
